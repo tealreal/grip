@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "teal.drawme.shrink.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "GlyphMixin",
+    "TextDisplayEntityRenderer",
+    "TextRendererAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

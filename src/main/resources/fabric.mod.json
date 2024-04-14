@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "drawme",
+  "version": "${version}",
+  "name": "drawme",
+  "description": "Create images in Minecraft using text displays.",
+  "authors": ["teal"],
+  "contact": {
+    "repo": "https://github.com/tealreal/grip"
+  },
+  "license": "GPLv3",
+  "icon": "assets/drawme/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "teal.drawme.Drawme"
+    ],
+    "main": [
+      "teal.drawme.Packet"
+    ],
+    "modmenu": [
+      "teal.drawme.config.ModMenu"
+    ]
+  },
+  "mixins":  [
+    "drawme.mixins.json",
+    "shrink.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "*",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  },
+  "suggests": {
+    "modmenu": "*",
+    "cloth-config": "*"
+  },
+  "accessWidener": "drawme.accesswidener"
+}

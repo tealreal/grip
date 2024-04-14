@@ -1,0 +1,24 @@
+accessWidener   v2  named
+# Just let me fuck with the title screen splash
+accessible field net/minecraft/client/resource/SplashTextResourceSupplier splashTexts Ljava/util/List;
+
+# Ping to avoid entities not spawning.
+accessible method net/minecraft/client/network/AbstractClientPlayerEntity getPlayerListEntry ()Lnet/minecraft/client/network/PlayerListEntry;
+
+# Accomodate 1.20 text displays
+accessible method net/minecraft/entity/decoration/DisplayEntity$TextDisplayEntity setDisplayFlags (B)V
+accessible method net/minecraft/entity/decoration/DisplayEntity$TextDisplayEntity setBackground (I)V
+accessible method net/minecraft/entity/decoration/DisplayEntity$TextDisplayEntity setLineWidth (I)V
+accessible method net/minecraft/entity/decoration/DisplayEntity$TextDisplayEntity setText (Lnet/minecraft/text/Text;)V
+accessible method net/minecraft/entity/decoration/DisplayEntity setBrightness (Lnet/minecraft/entity/decoration/Brightness;)V
+accessible field net/minecraft/entity/decoration/DisplayEntity SCALE Lnet/minecraft/entity/data/TrackedData;
+accessible method net/minecraft/entity/decoration/DisplayEntity setBillboardMode (Lnet/minecraft/entity/decoration/DisplayEntity$BillboardMode;)V
+
+# Get XYZ coords
+accessible field net/minecraft/command/argument/DefaultPosArgument x Lnet/minecraft/command/argument/CoordinateArgument;
+accessible field net/minecraft/command/argument/DefaultPosArgument y Lnet/minecraft/command/argument/CoordinateArgument;
+accessible field net/minecraft/command/argument/DefaultPosArgument z Lnet/minecraft/command/argument/CoordinateArgument;
+
+# etc.
+accessible class net/minecraft/client/font/TextRenderer$Drawer
+accessible field net/minecraft/client/font/TextRenderer$Drawer x F
