@@ -90,6 +90,14 @@ public class ModMenu implements ModMenuApi {
             );
 
             options.addEntry(
+                ceb.startBooleanToggle(Text.literal("Ignore metadata"), Drawme.config.doIgnoreMetadata())
+                    .setDefaultValue(VirginConfig.doIgnoreMetadata())
+                    .setTooltip(Text.literal("When a text display's text begins with a specific string, it will not render the line of the frame provided."))
+                    .setSaveConsumer(Drawme.config::setIgnoreMetadata)
+                    .build()
+            );
+
+            options.addEntry(
                 ceb.startBooleanToggle(Text.literal("Squish text ")
                             .append(Text.literal("!").setStyle(Style.EMPTY.withBold(true).withColor(Formatting.RED)))
                         , Drawme.config.doSquishText())

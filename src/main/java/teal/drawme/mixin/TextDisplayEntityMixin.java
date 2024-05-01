@@ -55,7 +55,7 @@ public abstract class TextDisplayEntityMixin extends DisplayEntity {
         cancellable = true
     )
     private void splitLines(DisplayEntity.TextDisplayEntity.LineSplitter splitter, CallbackInfoReturnable<DisplayEntity.TextDisplayEntity.TextLines> cir) {
-        if (!config.doSummonSP()) return;
+        if (config.doIgnoreMetadata()) return;
         if (isNBT != null && !isNBT) {
             isNBT = getText().getString().startsWith(VideoPlayer.nbtTag);
             return;

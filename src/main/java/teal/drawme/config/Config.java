@@ -27,6 +27,7 @@ public class Config {
     private boolean titleScreenOnly;
 
     private boolean summonEntitiesSP;
+    private boolean ignoreMetadata;
 
     private boolean squishText;
     private float glyphAdvanceOffset;
@@ -40,6 +41,7 @@ public class Config {
         this.titleScreenEasterEgg = false;
         this.titleScreenOnly = false;
         this.summonEntitiesSP = false;
+        this.ignoreMetadata = false;
         this.squishText = false;
         this.glyphAdvanceOffset = 0.f;
     }
@@ -106,6 +108,14 @@ public class Config {
 
     public void setSummonSP(boolean summonEntitiesSP) {
         this.summonEntitiesSP = summonEntitiesSP;
+    }
+
+    public boolean doIgnoreMetadata() {
+        return ignoreMetadata;
+    }
+
+    public void setIgnoreMetadata(boolean ignoreMetadata) {
+        this.ignoreMetadata = ignoreMetadata;
     }
 
     public boolean doSquishText() {

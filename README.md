@@ -25,10 +25,13 @@ To use:
 
 ### Some Images
 
-![VLC Icon](https://i.ibb.co/7nQBdLW/vlc.png)
-![Flowers](https://i.ibb.co/PCvLQry/flowers.png)
-![Sad Face](https://i.ibb.co/MMyt2Pf/sad-face.png)
-![Commonplace AL](https://i.ibb.co/PQ1xL98/commonplace-dupe-pixels-highlighted.png)
+![VLC Icon](/images/vlc.png)
+![Flowers](/images/flowers.png)
+![Sad Face](/images//sad-face.png)
+
+#### Debug Image
+![Commonplace AL](/images/commonplace-dupe-pixels-highlighted.png)
+Duplicate pixels on the same strip/line were highlighted in white.
 
 ## Commands
 
@@ -90,6 +93,7 @@ If you need to fine-tune things like glyph gaps or compatibility with the Replay
 |         **Run title screen Easter egg**          | `Boolean` |                             Special title screen Easter egg, random chance of a video appearing (Put it under the ./drawme/_splash/ folder!)                             | `false` |
 |       **Run videos on title screen only**        | `Boolean` |                                Chooses a random folder from the drawme folder, and plays that video. (Negates above option if this is on)                                | `false` |
 | **Summon entities in singleplayer for playback** | `Boolean` | This summons in real text displays for the server edit instead of mixins. As a result, this is only for integrated servers [singleplayer] and may cause choppy playback. | `false` |
+|               **Ignore metadata**                | `Boolean` |                               When a text display's text begins with a specific string, it will not render the line of the frame provided.                               | `false` |
 |                 **Squish text**                  | `Boolean` |          Used to make video playback appear better by removing gaps in between characters, affects all text displays regardless if they are created by drawme.           | `false` |
 |             **Glyph Advance Offset**             |  `Float`  |                          Changes spacing in between individual characters for every text in the game. Use -1 to perfectly join all characters.                           |  30.0   |
 
@@ -132,25 +136,25 @@ Since Java does not like me, you can't play a video directly in game. You first 
 ### Text Display VS Armorstands
 Initially, this mod utilized both text displays and armorstands, but now only uses text displays. Text displays are only a feature for 1.19.4+, but are more versatile than armorstands. Here is a table that outlines the benefits of both entities:
 
-|          Property          |                        Description                         |                         Armorstand                          |                                Text Display                                 |
-|:--------------------------:|:----------------------------------------------------------:|:-----------------------------------------------------------:|:---------------------------------------------------------------------------:|
-|    **Static Rotation**     |                       Fixed rotation                       |                              ✘                              |                                      ✔                                      |
-|  **Horizontal Rotation**   |     Rotates based on yaw (think of shaking left/right)     |                              ✘                              |                                      ✔                                      |
-|   **Vertical Rotation**    |     Rotates based on pitch (think of nodding up/down)      |                              ✘                              |                                      ✔                                      |
-|     **Full Rotation**      |        Rotates with camera, think of 1.8 holograms.        |                              ✔                              |                                      ✔                                      |
-|     **Version Added**      |                             -                              |                            1.8+                             |                                   1.19.4+                                   |
-|    **Pitch Adjustable**    |                 Can be summoned with tilt                  |                              ✘                              |                                      ✔                                      |
-|        **Scalable**        |          Can be scaled down to take up less space          |                              ✘                              |                                      ✔                                      |
-|     **Removable Gaps**     |           Remove gaps in between each character            |                      Only with mixins                       |                              Only with mixins                               |
-|       **Fullbright**       |                             -                              |                              ✘                              |                                      ✔                                      |
-| **Transparent Background** |                             -                              |                              ✘                              |                                      ✔                                      |
-|         **Image**          | ![Control Image](https://i.ibb.co/GcsKwRj/commonplace.jpg) | ![48x48 AST](https://i.ibb.co/b7Z6hvr/armorstand-48x48.png) | ![48x48 TDE](https://i.ibb.co/cCr9HMW/text-display-default-scale-48x48.png) |
+|          Property          |                    Description                     |                 Armorstand                 |                        Text Display                        |
+|:--------------------------:|:--------------------------------------------------:|:------------------------------------------:|:----------------------------------------------------------:|
+|    **Static Rotation**     |                   Fixed rotation                   |                     ✘                      |                             ✔                              |
+|  **Horizontal Rotation**   | Rotates based on yaw (think of shaking left/right) |                     ✘                      |                             ✔                              |
+|   **Vertical Rotation**    | Rotates based on pitch (think of nodding up/down)  |                     ✘                      |                             ✔                              |
+|     **Full Rotation**      |    Rotates with camera, think of 1.8 holograms.    |                     ✔                      |                             ✔                              |
+|     **Version Added**      |                         -                          |                    1.8+                    |                          1.19.4+                           |
+|    **Pitch Adjustable**    |             Can be summoned with tilt              |                     ✘                      |                             ✔                              |
+|        **Scalable**        |      Can be scaled down to take up less space      |                     ✘                      |                             ✔                              |
+|     **Removable Gaps**     |       Remove gaps in between each character        |              Only with mixins              |                      Only with mixins                      |
+|       **Fullbright**       |                         -                          |                     ✘                      |                             ✔                              |
+| **Transparent Background** |                         -                          |                     ✘                      |                             ✔                              |
+|         **Image**          |     ![Control Image](/images/commonplace.jpg)      | ![48x48 AST](/images/armorstand-48x48.png) | ![48x48 TDE](/images/text-display-default-scale-48x48.png) |
 
 ### Billboard Modes
 Here is a comprehensive table of what each billboard mode does.
 
-|                            Detail                            |                                             `FIXED`                                             |                                              `VERTICAL`                                               |                                               `HORIZONTAL`                                                |                                             `CENTER`                                              |
-|:------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------:|
-| **Image**<br/>*(Each image taken with 190 yaw and 10 pitch)* | ![FIXED](https://i.ibb.co/Dpstc0H/FIXED-text-display-scale-0-14-480x480-space-remover-post.png) | ![VERTICAL](https://i.ibb.co/zJPt51J/VERTICAL-text-display-scale-0-14-480x480-space-remover-post.png) | ![HORIZONTAL](https://i.ibb.co/0Qmrr5j/HORIZONTAL-text-display-scale-0-14-480x480-space-remover-post.png) | ![CENTER](https://i.ibb.co/KFSkxHd/CENTER-text-display-scale-0-14-480x480-space-remover-post.png) |
-|                       **Description**                        |                           Rotation is static, backside is invisible.                            |                            Rotates as you move around it, has no backside.                            |               Does not "rotate" as you move around it. May have gaps in-between each line.                |   Allows both vertical and horizontal rotation; behavior is analogous to armorstand holograms.    |
-|                       **Good for...**                        |                     Literal billboards, images, videos with fixed rotation                      |                                                Videos                                                 |                                                     -                                                     |                                                 -                                                 |
+|                            Detail                            |                                    `FIXED`                                     |                                      `VERTICAL`                                      |                                       `HORIZONTAL`                                       |                                           `CENTER`                                           |
+|:------------------------------------------------------------:|:------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------:|
+| **Image**<br/>*(Each image taken with 190 yaw and 10 pitch)* | ![FIXED](/images/FIXED-text-display-scale-0-14-480x480-space-remover-post.png) | ![VERTICAL](/images/VERTICAL-text-display-scale-0-14-480x480-space-remover-post.png) | ![HORIZONTAL](/images/HORIZONTAL-text-display-scale-0-14-480x480-space-remover-post.png) |       ![CENTER](/images/CENTER-text-display-scale-0-14-480x480-space-remover-post.png)       |
+|                       **Description**                        |                   Rotation is static, backside is invisible.                   |                   Rotates as you move around it, has no backside.                    |       Does not "rotate" as you move around it. May have gaps in-between each line.       | Allows both vertical and horizontal rotation; behavior is analogous to armorstand holograms. |
+|                       **Good for...**                        |             Literal billboards, images, videos with fixed rotation             |                                        Videos                                        |                                            -                                             |                                              -                                               |
